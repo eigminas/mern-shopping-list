@@ -26,7 +26,7 @@ export const loadUser = () => (dispatch, getState) => {
             payload: res.data
         }))
         .catch(err => {
-            dispatch(returnErrors(err.response.data, err.response.status));
+            //dispatch(returnErrors(err.response.data, err.response.status));
             dispatch({
                 type: AUTH_ERROR
             });
@@ -38,7 +38,7 @@ export const register = ({ name, email, password }) => dispatch => {
     // headers
     const config = {
         headers: {
-            "Content-type": "application/json"
+            "Content-Type": "application/json"
         }
     }
 
@@ -51,7 +51,6 @@ export const register = ({ name, email, password }) => dispatch => {
             payload: res.data
         }))
         .catch(err => {
-            console.log(err.response.data);
             dispatch(returnErrors(err.response.data, err.response.status, 'REGISTER_FAIL'));
             dispatch({
                 type: REGISTER_FAIL
