@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { loadUser } from './actions/authActions';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import AppNavBar from './components/AppNavBar';
@@ -9,7 +10,7 @@ import store from './store';
 import ItemModal from './components/ItemModal';
 import { Container } from "reactstrap";
 
-import { loadUser } from './actions/authActions';
+
 
 
 

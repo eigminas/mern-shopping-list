@@ -26,7 +26,9 @@ export const loadUser = () => (dispatch, getState) => {
             payload: res.data
         }))
         .catch(err => {
-            //dispatch(returnErrors(err.response.data, err.response.status));
+            console.log("I am in authAction");
+            console.log(err.response.data);
+            dispatch(returnErrors(err.response.data, err.response.status));
             dispatch({
                 type: AUTH_ERROR
             });
