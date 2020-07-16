@@ -1,7 +1,10 @@
-const config = require('config');
-const jwt = require('jsonwebtoken');
+const config = require('config'); // get default.json where we have mongoURI and jwtSecret
+// jwtSecret holds our secret key
+const jwt = require('jsonwebtoken'); // get jsonwebtoken
 
 function auth(req, res, next) {
+    // User will need to supply username/passowrd for the first time and the
+    // server will return access-token and place it in 'x-auth-token' field
     const token = req.header('x-auth-token');
 
     // check for token

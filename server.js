@@ -1,7 +1,7 @@
-const express = require('express');
-const mongoose = require('mongoose');
+const express = require('express'); // require express
+const mongoose = require('mongoose'); // require mongoose for connecting to MongoDB
 
-const app = express();
+const app = express(); // initiliaze app with express
 
 const path = require('path');
 const config = require('config');

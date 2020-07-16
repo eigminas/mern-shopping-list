@@ -1,5 +1,5 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express'); // require express
+const router = express.Router();    // get Router from express
 const auth = require('../../middleware/auth');
 
 // item model
