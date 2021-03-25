@@ -2,19 +2,19 @@ const config = require("config");
 const jwt = require("jsonwebtoken");
 
 function auth(req, res, next) {
-  
+  // Find jwt token in request header
   const token = req.header("x-auth-token");
 
-  // check for token
+  // Check if token exists
   if (!token) {
     return res.status(401).json({ msg: "No token, authorization denied" });
   }
-
+  // Token exists. Verify token.
   try {
-    // verify token
+    // Verify token
     const decoded = jwt.verify(token, config.get("jwtSecret"));
 
-    // add user from payload
+    // Add user from payload
     req.user = decoded;
     next();
   } catch (e) {

@@ -5,13 +5,12 @@ const config = require("config");
 
 const app = express();
 
-// body parser middleware
 app.use(express.json());
 
-// DB config
+// Get database config
 const db = config.get("mongoURI");
 
-// connect to MongoDB
+// Connect to database
 mongoose
   .connect(db, {
     useNewUrlParser: true,
@@ -21,7 +20,7 @@ mongoose
   .then(() => console.log("MongoDB Connected..."))
   .catch((err) => console.log(err));
 
-// use routes
+// Routes
 app.use("/api/items", require("./routes/api/Items"));
 app.use("/api/users", require("./routes/api/users"));
 app.use("/api/auth", require("./routes/api/auth"));

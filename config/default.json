@@ -1,4 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://eigminas:<>@mernshopping.yywvr.mongodb.net/mernShopping?retryWrites=true&w=majority",
-    "jwtSecret": "<>"
+    "mongoURI": "mongodb://127.0.0.1:27017/mern_shopping_list",
+    "jwtSecret": "abcde"
 }
